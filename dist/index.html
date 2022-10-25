@@ -4,22 +4,153 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="main.js"></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <nav id="navbar">
-        <div class="container">
-          <h1 class="logo"><a href="index.html">HBT</a></h1>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+
+    <title>Webpack App</title>
+  <script defer src="bundle.js"></script></head>
+  <body id="home">
+    <header class="hero img1">
+      <div id="navbar" class="navbar top">
+        <h1 class="logo"><span class="text-primary"> Simple</span> Ramen</h1>
+        <nav>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a class="current" href="contact.html">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#Menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
+
+      <div class="content">
+        <h1>Hungry? Order online now!</h1>
+        <p>Order your favorite food online at your convenience.</p>
+        <a href="#about" class="btn"
+          ><i class="fas fa-chevron-right"></i> Check Menu</a
+        >
+      </div>
     </header>
-    <div id="content"></div>
+
+    <main>
+      <section id="gallery" class="cases flex-grid section-padding">
+        <header class="section-header">
+          <h4>Authentic Noodle Experience</h4>
+          <h2>Gallery</h2>
+        </header>
+        <div class="row">
+          <div class="column">
+            <a
+              href="assets/img/food.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="assets/img/food.jpg" alt="" />
+            </a>
+            <a
+              href="./assets/img/food1.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="./assets/img/food1.jpg" alt="" />
+            </a>
+          </div>
+          <div class="column">
+            <a
+              href="assets/img/food2.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="assets/img/food2.jpg" alt="" />
+            </a>
+            <a
+              href="assets/img/food3.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="assets/img/food3.jpg" alt="" />
+            </a>
+          </div>
+          <div class="column">
+            <a
+              href="assets/img/food4.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="assets/img/food4.jpg" alt="" />
+            </a>
+            <a
+              href="assets/img/food5.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="assets/img/food5.jpg" alt="" />
+            </a>
+          </div>
+          <div class="column">
+            <a
+              href="assets/img/food6.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="assets/img/food6.jpg" alt="" />
+            </a>
+            <a
+              href="assets/img/food7.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
+            >
+              <img src="assets/img/food7.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const navbar = document.getElementById("navbar");
+      let scrolled = false;
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove("top");
+          if (!scrolled) {
+            navbar.style.transform = "translateY(-70px)";
+          }
+          setTimeout(function () {
+            navbar.style.transform = "translateY(0)";
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add("top");
+          scrolled = false;
+        }
+      };
+
+      // Smooth Scrolling
+      $("#navbar a, .btn").on("click", function (e) {
+        if (this.hash !== "") {
+          e.preventDefault();
+
+          const hash = this.hash;
+
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            300
+          );
+        }
+      });
+    </script>
   </body>
 </html>
