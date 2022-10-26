@@ -4,14 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+    <script
+      src="https://kit.fontawesome.com/66b42f50eb.js"
       crossorigin="anonymous"
-    />
+    ></script>
 
-    <title>Webpack App</title>
+    <title>Simple Ramen</title>
   <script defer src="bundle.js"></script></head>
   <body id="home">
     <header class="hero img">
@@ -28,8 +26,8 @@
       </div>
 
       <div class="content">
-        <h1>Hungry? Order online now!</h1>
-        <p>Order your favorite food online at your convenience.</p>
+        <h1>SIMPLE RAMEN</h1>
+        <p>Traditional dishes skillfully cooked to perfection</p>
         <a href="#about" class="btn"
           ><i class="fas fa-chevron-right"></i> Check Menu</a
         >
@@ -67,80 +65,47 @@
       <div class="whitebox">
         <div class="whitebox_text">
           <h2>Hungry? Order online now!</h2>
-          <p>Order your favorite food online at your convenience.</p>
+          <p>Take out & Delivery is Available.</p>
         </div>
         <button class="order_btn"><a href="#">Order Now</a></button>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="contact flex-columns">
-      <div class="row">
-        <div class="column">
-          <div class="column-1">
+    <section id="contact" class="contact">
+      <header class="section-header">
+        <h2>Contact Us</h2>
+      </header>
+      <div class="contact_container">
+          <div class="slide_images">
             <img src="assets/img/contact.jpg" alt="" />
           </div>
-        </div>
-        <div class="column">
-          <div class="column-2 bg-light">
-            <h2>Contact Info</h2>
-            <p>Sunday 11:00 AM - 10:30 PM</p>
-            <ps>Monday 11:00 AM - 10:30 PM</ps>
-            <p>Tuesday 11:00 AM - 10:30 PM</p>
-            <p>Wednesday 11:00 AM - 10:30 PM</p>
-            <p>Thursday 11:00 AM - 10:30 PM</p>
-            <p>Friday 11:00 AM - 11:30 PM</p>
-            <p>Saturday 11:00 AM - 11:30 PM</p>
-
-            <a href="#" class="btn btn-outline">
-              <i class="fas fa-chevron"></i>
-              Read More
-            </a>
+          <div class="contact_info">
+            <h2><i class="fa-solid fa-phone"></i> Contact Info</h2>
+            <div class="phone_number">718-279-2470</div>
+            <div class="address">30 Alfred Drive, Bayside, NY 11361</div>
+            
+            <h2 class="hours"><i class="fa-solid fa-clock"></i> Business Hours</h2>
+            <div class="days_hours">
+            <ul class="days">
+              <ul>Sunday</ul>
+              <ul>Monday</ul>
+              <ul>Tuesday</ul>
+              <ul>Wednesday</ul>
+              <ul>Thursday</ul>
+              <ul>Friday</ul>
+              <ul>Saturday</ul>
+            </ul>
+            <ul class="hours">
+              <ul>11:00 AM - 10:30 PM</ul>
+              <ul>11:00 AM - 10:30 PM</ul>
+              <ul>11:00 AM - 10:30 PM</ul>
+              <ul>11:00 AM - 10:30 PM</ul>
+              <ul>11:00 AM - 10:30 PM</ul>
+              <ul>11:00 AM - 10:30 PM</ul>
+              <ul>11:00 AM - 11:30 PM</ul>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact flex-columns">
-      <div class="row">
-        <div class="column">
-          <div class="column-1">
-            <img src="assets/img/contact.jpg" alt="" />
-          </div>
-        </div>
-        <div class="column">
-          <div class="column-2 bg-light">
-            <h2>Request Callback</h2>
-            <form action="" class="callback-form">
-              <div class="form-control">
-                <label for="name"></label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Enter name"
-                />
-              </div>
-              <div class="form-control">
-                <label for="email"></label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Enter email"
-                />
-              </div>
-              <div class="form-control">
-                <label for="phone"></label>
-                <input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  placeholder="Enter phone"
-                />
-              </div>
-              <input type="submit" value="Send" id="submit" class="btn" />
-            </form>
           </div>
         </div>
       </div>
