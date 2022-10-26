@@ -14,7 +14,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body id="home">
-    <header class="hero img1">
+    <header class="hero img">
       <div id="navbar" class="navbar top">
         <h1 class="logo"><span class="text-primary"> Simple</span> Ramen</h1>
         <nav>
@@ -37,120 +37,129 @@
     </header>
 
     <main>
-      <section id="gallery" class="cases flex-grid section-padding">
+      <section id="gallery" class="gallery flex-grid section-padding">
         <header class="section-header">
           <h4>Authentic Noodle Experience</h4>
           <h2>Gallery</h2>
         </header>
-        <div class="row">
-          <div class="column">
-            <a
-              href="assets/img/food.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="assets/img/food.jpg" alt="" />
-            </a>
-            <a
-              href="./assets/img/food1.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="./assets/img/food1.jpg" alt="" />
+
+        <div class="card_container">
+          <div class="card">
+            <a href="assets/img/dish.jpg">
+              <img src="assets/img/dish.jpg" alt="" />
             </a>
           </div>
-          <div class="column">
-            <a
-              href="assets/img/food2.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="assets/img/food2.jpg" alt="" />
-            </a>
-            <a
-              href="assets/img/food3.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="assets/img/food3.jpg" alt="" />
+          <div class="card">
+            <a href="assets/img/dish1.jpg">
+              <img src="assets/img/dish1.jpg" alt="" />
             </a>
           </div>
-          <div class="column">
-            <a
-              href="assets/img/food4.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="assets/img/food4.jpg" alt="" />
-            </a>
-            <a
-              href="assets/img/food5.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="assets/img/food5.jpg" alt="" />
-            </a>
-          </div>
-          <div class="column">
-            <a
-              href="assets/img/food6.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="assets/img/food6.jpg" alt="" />
-            </a>
-            <a
-              href="assets/img/food7.jpg"
-              data-lightbox="cases"
-              data-title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, dolore!"
-            >
-              <img src="assets/img/food7.jpg" alt="" />
+          <div class="card">
+            <a href="assets/img/dish2.jpg">
+              <img src="assets/img/dish2.jpg" alt="" />
             </a>
           </div>
         </div>
       </section>
     </main>
 
+    <section class="order">
+      <div class="whitebox">
+        <div class="whitebox_text">
+          <h2>Hungry? Order online now!</h2>
+          <p>Order your favorite food online at your convenience.</p>
+        </div>
+        <button class="order_btn"><a href="#">Order Now</a></button>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact flex-columns">
+      <div class="row">
+        <div class="column">
+          <div class="column-1">
+            <img src="assets/img/contact.jpg" alt="" />
+          </div>
+        </div>
+        <div class="column">
+          <div class="column-2 bg-light">
+            <h2>Contact Info</h2>
+            <p>Sunday 11:00 AM - 10:30 PM</p>
+            <ps>Monday 11:00 AM - 10:30 PM</ps>
+            <p>Tuesday 11:00 AM - 10:30 PM</p>
+            <p>Wednesday 11:00 AM - 10:30 PM</p>
+            <p>Thursday 11:00 AM - 10:30 PM</p>
+            <p>Friday 11:00 AM - 11:30 PM</p>
+            <p>Saturday 11:00 AM - 11:30 PM</p>
+
+            <a href="#" class="btn btn-outline">
+              <i class="fas fa-chevron"></i>
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact flex-columns">
+      <div class="row">
+        <div class="column">
+          <div class="column-1">
+            <img src="assets/img/contact.jpg" alt="" />
+          </div>
+        </div>
+        <div class="column">
+          <div class="column-2 bg-light">
+            <h2>Request Callback</h2>
+            <form action="" class="callback-form">
+              <div class="form-control">
+                <label for="name"></label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter name"
+                />
+              </div>
+              <div class="form-control">
+                <label for="email"></label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter email"
+                />
+              </div>
+              <div class="form-control">
+                <label for="phone"></label>
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="Enter phone"
+                />
+              </div>
+              <input type="submit" value="Send" id="submit" class="btn" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer bg-dark">
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+      </div>
+      <p>Copyright &copy; 2022 - SimpleRamen</p>
+    </footer>
+
     <script
       src="https://code.jquery.com/jquery-3.5.0.min.js"
       integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
       crossorigin="anonymous"
     ></script>
-    <script>
-      const navbar = document.getElementById("navbar");
-      let scrolled = false;
-
-      window.onscroll = function () {
-        if (window.pageYOffset > 100) {
-          navbar.classList.remove("top");
-          if (!scrolled) {
-            navbar.style.transform = "translateY(-70px)";
-          }
-          setTimeout(function () {
-            navbar.style.transform = "translateY(0)";
-            scrolled = true;
-          }, 200);
-        } else {
-          navbar.classList.add("top");
-          scrolled = false;
-        }
-      };
-
-      // Smooth Scrolling
-      $("#navbar a, .btn").on("click", function (e) {
-        if (this.hash !== "") {
-          e.preventDefault();
-
-          const hash = this.hash;
-
-          $("html, body").animate(
-            {
-              scrollTop: $(hash).offset().top,
-            },
-            300
-          );
-        }
-      });
-    </script>
   </body>
 </html>

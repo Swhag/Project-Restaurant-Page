@@ -82,15 +82,15 @@ img {
   transition: all 0.6s ease-in-out;
 }
 
-.img1 {
+.img {
   background: url("../assets/img//main/main.jpg") no-repeat center center/cover;
 }
 
-.img2 {
+.img1 {
   background: url("../assets/img/main/main1.jpg") no-repeat center center/cover;
 }
 
-.img3 {
+.img2 {
   background: url("../assets/img/main/main2.jpg") no-repeat center center/cover;
 }
 
@@ -150,12 +150,85 @@ img {
   margin-bottom: 15px;
 }
 
-.cases img:hover {
-  opacity: 0.7;
+/* gallery */
+#gallery {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
 }
 
-.team img {
-  border-radius: 50%;
+#gallery .card_container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#gallery .card {
+  width: 20vw;
+  height: 30vh;
+}
+
+.gallery img:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* order section */
+.order {
+  background-color: #f4f4f4;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whitebox {
+  background-color: #fff;
+  box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
+  flex: 1;
+  max-width: 70rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.whitebox:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.whitebox_text {
+  color: #333;
+}
+
+.whitebox_text h2 {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.whitebox_text p {
+  text-align: center;
+}
+
+.order_btn {
+  background-color: #ffa000;
+  padding: 10px 36px;
+  margin-top: 12px;
+  border: 2px #fff solid;
+}
+
+.order_btn a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.order_btn:hover {
+  transition: all 0.4s ease-in-out;
+  background-color: #c67100;
 }
 
 /* Callback form */
@@ -189,37 +262,12 @@ img {
   margin-top: 20px;
 }
 
-/* Post */
-.post {
-  padding: 50px 30px;
-}
-
-.post h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: #ccc solid 1px;
-}
-
-.post .meta {
-  margin-bottom: 30px;
-}
-
-.post img {
-  width: 300px;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 30px;
-}
-
 /* Footer */
 .footer {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 200px;
+  height: 100px;
 }
 
 .footer a {
@@ -227,11 +275,16 @@ img {
 }
 
 .footer a:hover {
-  color: #28a745;
+  color: #ffa000;
 }
 
 .footer .social > * {
   margin-right: 30px;
+}
+
+#sign-up {
+  width: 50vw;
+  margin: auto;
 }
 
 /* Mobile */
