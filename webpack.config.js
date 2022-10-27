@@ -29,6 +29,11 @@ module.exports = {
       filename: "index.html",
       template: "src/template.html",
     }),
+    new HtmlWebpackPlugin({
+      title: "Menu",
+      filename: "menu.html",
+      template: "src/menu.html",
+    }),
   ],
   output: {
     filename: "bundle.js",

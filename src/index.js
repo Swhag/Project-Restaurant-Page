@@ -2,19 +2,6 @@ import "./styles/style.css";
 import "./styles/utilities.css";
 import "./images";
 
-// import "./lightbox.min";
-
-// function component() {
-//   const container = document.createElement("div");
-
-//   container.innerHTML = "";
-//   container.classList.add("container");
-
-//   return container;
-// }
-
-// document.body.appendChild(component());
-
 // ---------------------------------------
 
 const heroImage = document.querySelector(".hero");
@@ -42,9 +29,9 @@ setInterval(() => {
   switchImage();
 }, 5000);
 
-// ---------------------------------------
+// JQuery navbar & scrolling -------------------------
 
-const navbar = document.getElementById("navbar");
+const navbar = document.querySelector("#navbar");
 let scrolled = false;
 
 window.onscroll = function () {
@@ -64,7 +51,7 @@ window.onscroll = function () {
 };
 
 // Smooth Scrolling
-$("#navbar a, .btn").on("click", function (e) {
+$(".navbar a, .btn").on("click", function (e) {
   if (this.hash !== "") {
     e.preventDefault();
 
@@ -78,3 +65,45 @@ $("#navbar a, .btn").on("click", function (e) {
     );
   }
 });
+
+// image slides -------------------------------
+
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+// Menu tabs -------------------------------
+
+(function activateTabs() {
+  const tabs = document.querySelectorAll(".tab-button");
+  const tabsContent = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((a) =>
+    a.addEventListener("mousedown", () => displayTabContent(a))
+  );
+
+  function displayTabContent(a) {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("orange");
+      tabsContent[i].classList.remove("show");
+      if (tabs[i] == a) {
+        tabs[i].classList.add("orange");
+        tabsContent[i].classList.add("show");
+      }
+    }
+  }
+})();

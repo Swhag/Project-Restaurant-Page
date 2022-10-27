@@ -14,67 +14,60 @@
   crossorigin="anonymous"
 ></script>
 
-    <title>Simple Ramen</title>
-  <script defer src="bundle.js"></script></head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+  </head>
   <body id="home">
-    <header class="hero img">
-      <div id="navbar" class="navbar top">
+    <header class="hero_menu">
+      <div id="menu_navbar" class="navbar">
         <h1 class="logo"><span class="text-primary"> Simple</span> Ramen</h1>
         <nav>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="#Menu">Menu</a></li>
           </ul>
         </nav>
       </div>
-
-      <div class="content">
-        <h1>SIMPLE RAMEN</h1>
-        <p>Traditional dishes skillfully cooked to perfection</p>
-        <a href="#about" class="btn"
-          ><i class="fas fa-chevron-right"></i> Check Menu</a
-        >
-      </div>
     </header>
 
-    <main>
-      <section id="gallery" class="gallery flex-grid section-padding">
-        <header class="section-header">
-          <h4>Authentic Noodle Experience</h4>
-          <h2>Gallery</h2>
-        </header>
-
-        <div class="card_container">
-          <div class="card">
-            <a href="assets/img/dish.jpg">
-              <img src="assets/img/dish.jpg" alt="" />
-            </a>
-          </div>
-          <div class="card">
-            <a href="assets/img/dish1.jpg">
-              <img src="assets/img/dish1.jpg" alt="" />
-            </a>
-          </div>
-          <div class="card">
-            <a href="assets/img/dish2.jpg">
-              <img src="assets/img/dish2.jpg" alt="" />
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <section class="order">
-      <div class="whitebox">
-        <div class="whitebox_text">
-          <h2>Hungry? Order online now!</h2>
-          <p>Take out & Delivery is Available.</p>
-        </div>
-        <button class="btn"><a href="#">Order Now</a></button>
+    <section class="outer-container">
+    <div class="inner-container">
+      <div class="container mt-5">
+      <ul class="list">
+        <li class="tab-button">Products</li>
+        <li class="tab-button orange">Information</li>
+        <li class="tab-button">Shipping</li>
+      </ul>
+      <div class="tab-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
+          voluptates eos sequi tempore iure assumenda debitis adipisci quos
+          dolor blanditiis, quae, expedita reiciendis? Et quisquam nulla a magni
+          harum eius?
+        </p>
       </div>
-    </section>
+      <div class="tab-content show">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+          earum, fugiat sequi natus rerum velit officiis ducimus culpa iure in
+          quaerat aspernatur pariatur perferendis, necessitatibus itaque. Unde
+          illo in corporis!
+        </p>
+      </div>
+      <div class="tab-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet.
+          Quasi recusandae culpa commodi quaerat excepturi vel, sunt incidunt
+          quia tenetur aliquam doloribus eos! Mollitia dolores commodi alias
+          unde animi?
+        </p>
+      </div>
+      </div>
+    </div>
+  </section>
+
 
     <!-- Contact -->
     <section id="contact" class="contact">
@@ -104,11 +97,6 @@
               <div class="swiper-button-next"></div>
             </div>
         </div>
-
-
-
-
-
 
           <div class="contact_info">
             <h2><i class="fa-solid fa-phone"></i> Contact Info</h2>
