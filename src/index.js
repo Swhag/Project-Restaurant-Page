@@ -47,4 +47,61 @@ const swiper = new Swiper(".swiper", {
 })();
 
 // Menu data -------------------------------
-console.log(menu.ramenArray);
+
+let menuArray = [
+  menu.teaArray,
+  menu.appetizerArray,
+  menu.ramenArray,
+  menu.noodleArray,
+];
+const cardSection = document.querySelectorAll(".card-container");
+
+document.addEventListener("DOMContentLoaded", () => {
+  for (let k = 0; k < menuArray.length; k++) {
+    for (let i = 0; i < menuArray[k].length; i++) {
+      if (menuArray[k][i].description == undefined) {
+        menuArray[k][i].description = "";
+      }
+      cardSection[k].insertAdjacentHTML(
+        "beforeend",
+        `<div class="card">
+        <h3>${menuArray[k][i].title}</h3>
+        <div>${menuArray[k][i].description}</div>
+        <div>$${menuArray[k][i].price}</div>
+        <div class="btn-container">
+        <button data-price=${menuArray[k][i].price} data-title=${menuArray[k][i].title} class="btn add-btn">Add to Order</button>
+        </div>
+      </div>`
+      );
+    }
+  }
+});
+
+// -----------------------------------------
+
+let cart = {};
+if (localStorage.getItem("cart")) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+}
+const addToCartBtn = document.querySelectorAll(".card-container");
+
+addToCartBtn.forEach((card) =>
+  card.addEventListener("click", (e) => {
+    if (e.target.classList.contains("add-btn")) {
+      let price = parseInt(e.target.dataset.price);
+      let title = e.target.dataset.title;
+
+      if (title in cart) {
+        cart[title].qty++;
+      } else {
+        let cartItem = {
+          title: title,
+          price: price,
+          qty: 1,
+        };
+        cart[title] = cartItem;
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  })
+);
