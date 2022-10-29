@@ -342,13 +342,38 @@ ul.list::after {
   display: flex;
   justify-content: center;
   width: 100vw;
-  /* height: 50vh; */
 }
 
 .inner-container {
   display: flex;
   justify-content: center;
-  width: 80vw;
+  width: 75vw;
+}
+
+/* cart / order summary */
+.cart-display {
+  display: flex;
+  flex-direction: column;
+
+  width: 30vw;
+  height: 480px;
+  margin: 70px 15px 0px 0px;
+  padding: 5px;
+}
+
+.cart-notice {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+}
+.cart-summary {
+  margin-top: 30px;
+}
+.cart-display .checkout-btn {
+  padding: 15px;
+  margin: auto;
+  border-radius: 10px;
+  width: 90%;
 }
 
 /* ramen menu */
@@ -366,6 +391,7 @@ ul.list::after {
   background-color: #fff;
   padding: 20px;
   border-radius: 4px;
+  width: 500px;
 
   display: flex;
   flex-direction: column;
@@ -386,9 +412,10 @@ ul.list::after {
   align-items: flex-end;
 }
 
-.tab-content .card .btn {
+.tab-content .card .add-btn {
   background-color: #c2185b;
   width: 150px;
+  border-radius: 7px;
 }
 
 .tab-content .card .btn:hover {
@@ -397,7 +424,6 @@ ul.list::after {
 
 .tab-content .card div:nth-child(2) {
   margin-bottom: 20px;
-  width: 500px;
 }
 
 /* ------------------------------------------------ */
