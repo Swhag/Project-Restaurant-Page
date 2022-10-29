@@ -1,8 +1,8 @@
 import "./styles/style.css";
 import "./styles/utilities.css";
 import "./pages/images";
-import * as home from "./pages/home";
 import * as menu from "./pages/menu";
+import * as home from "./pages/home";
 
 // image slides -------------------------------
 
@@ -90,6 +90,7 @@ addToCartBtn.forEach((card) =>
     if (e.target.classList.contains("add-btn")) {
       let price = parseInt(e.target.dataset.price);
       let title = e.target.dataset.title;
+      console.log(title);
 
       if (title in cart) {
         cart[title].qty++;
@@ -102,6 +103,54 @@ addToCartBtn.forEach((card) =>
         cart[title] = cartItem;
       }
       localStorage.setItem("cart", JSON.stringify(cart));
+      updateCart();
     }
+  })
+);
+
+// -----------------------------------------
+
+const itemList = document.querySelector(".cart-items");
+
+function updateCart() {
+  let cart = {};
+  itemList.innerHTML = "";
+
+  if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+
+    for (let item in cart) {
+      addItemToCart(cart[item]);
+    }
+  }
+}
+
+function addItemToCart(cartItem) {
+  itemList.insertAdjacentHTML(
+    "beforeend",
+    `<div class="cart-item">
+
+    <div class="item-left">
+      <div>x${cartItem.qty}</div>
+     <h4>${cartItem.title}</h4>
+    </div>
+
+    <div class="item-right">
+      <div>$${cartItem.price}</div>
+      <p class="remove-btn">Remove<p>
+    </div>
+  </div>`
+  );
+}
+
+updateCart();
+
+// -----------------------------------------
+
+const removeBtn = document.querySelectorAll(".remove-btn");
+
+removeBtn.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    console.log("clicked");
   })
 );

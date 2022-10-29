@@ -362,18 +362,51 @@ ul.list::after {
 }
 
 .cart-notice {
-  border: 1px solid gray;
+  border: 1px solid #c2c2c2;
   border-radius: 10px;
   padding: 20px;
 }
+
 .cart-summary {
-  margin-top: 30px;
+  margin: 30px auto 30px auto;
 }
+
 .cart-display .checkout-btn {
   padding: 15px;
-  margin: auto;
+  margin: 30px auto 0 auto;
   border-radius: 10px;
   width: 90%;
+}
+
+.cart-item {
+  border-bottom: 1px solid #c2c2c2;
+  height: 100px;
+  padding: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-left {
+  display: flex;
+  gap: 20px;
+}
+
+.item-right {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-right p {
+  color: #c62828;
+}
+
+.item-right p:hover {
+  color: #8e0000;
+  cursor: pointer;
 }
 
 /* ramen menu */
