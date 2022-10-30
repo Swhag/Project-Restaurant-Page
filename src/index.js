@@ -26,7 +26,7 @@ const swiper = new Swiper(".swiper", {
 
 // Menu tabs -------------------------------
 
-(function activateTabs() {
+function activateTabs() {
   const tabs = document.querySelectorAll(".tab-button");
   const tabsContent = document.querySelectorAll(".tab-content");
 
@@ -44,9 +44,10 @@ const swiper = new Swiper(".swiper", {
       }
     }
   }
-})();
+}
 
 // Menu data -------------------------------
+
 let menuArray = [
   menu.teaArray,
   menu.appetizerArray,
@@ -74,6 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
   }
+  activateTabs();
+  updateCart();
+  updateCheckout();
 });
 
 // -----------------------------------------
@@ -85,6 +89,44 @@ function getCart() {
   }
   return cart;
 }
+
+// -----------------------------------------
+
+function addToCart(e) {
+  const cart = getCart();
+
+  let price = parseFloat(e.target.dataset.price).toFixed(2);
+  let title = e.target.dataset.title;
+  let item = cart.find((item) => item.title === title);
+
+  console.log(price);
+  if (item) {
+    item.qty++;
+  } else {
+    cart.push({
+      title: title,
+      price: price,
+      qty: 1,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// -----------------------------------------
+
+function deleteItem(itemName) {
+  const cart = getCart();
+
+  cart.forEach((item, index) => {
+    if (item.title === itemName) {
+      cart.splice(index, 1);
+    }
+  });
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// -----------------------------------------
 
 function updateCart() {
   const cart = getCart();
@@ -108,6 +150,12 @@ function updateCart() {
     </div>`
     );
   }
+}
+
+// -----------------------------------------
+
+function updateCheckout() {
+  const cart = getCart();
 
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
@@ -118,8 +166,6 @@ function updateCart() {
   checkoutBtn.innerHTML = `<i class="fa fa-utensils"></i>
    Checkout • $${parseFloat(total).toFixed(2)}`;
 }
-
-updateCart();
 
 // -----------------------------------------
 
@@ -133,38 +179,8 @@ window.addEventListener("click", (e) => {
       e.target.parentElement.previousElementSibling.lastElementChild.innerHTML;
     deleteItem(itemName);
   }
+  updateCart();
+  updateCheckout();
 });
 
-function addToCart(e) {
-  const cart = getCart();
-
-  let price = parseFloat(e.target.dataset.price).toFixed(2);
-  let title = e.target.dataset.title;
-  let item = cart.find((item) => item.title === title);
-
-  console.log(price);
-  if (item) {
-    item.qty++;
-  } else {
-    cart.push({
-      title: title,
-      price: price,
-      qty: 1,
-    });
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCart();
-}
-
-function deleteItem(itemName) {
-  const cart = getCart();
-
-  cart.forEach((item, index) => {
-    if (item.title === itemName) {
-      cart.splice(index, 1);
-    }
-  });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCart();
-}
+// -----------------------------------------
