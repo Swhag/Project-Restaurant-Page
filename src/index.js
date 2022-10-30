@@ -54,6 +54,7 @@ let menuArray = [
   menu.ramenArray,
   menu.noodleArray,
 ];
+
 const cardSection = document.querySelectorAll(".card-container");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -79,18 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // -----------------------------------------
 
-let cart = {};
-if (localStorage.getItem("cart")) {
-  cart = JSON.parse(localStorage.getItem("cart"));
-}
 const addToCartBtn = document.querySelectorAll(".card-container");
 
-addToCartBtn.forEach((card) =>
-  card.addEventListener("click", (e) => {
+addToCartBtn.forEach((addButton) =>
+  addButton.addEventListener("click", (e) => {
+    const cart = getCart();
+
     if (e.target.classList.contains("add-btn")) {
       let price = parseInt(e.target.dataset.price);
       let title = e.target.dataset.title;
-      console.log(title);
 
       if (title in cart) {
         cart[title].qty++;
@@ -102,6 +100,7 @@ addToCartBtn.forEach((card) =>
         };
         cart[title] = cartItem;
       }
+
       localStorage.setItem("cart", JSON.stringify(cart));
       updateCart();
     }
@@ -110,39 +109,38 @@ addToCartBtn.forEach((card) =>
 
 // -----------------------------------------
 
+function getCart() {
+  let cart = {};
+  if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+  }
+  return cart;
+}
+
 const itemList = document.querySelector(".cart-items");
 
 function updateCart() {
-  let cart = {};
+  const cart = getCart();
   itemList.innerHTML = "";
 
-  if (localStorage.getItem("cart")) {
-    cart = JSON.parse(localStorage.getItem("cart"));
-
-    for (let item in cart) {
-      addItemToCart(cart[item]);
-    }
+  for (let item in cart) {
+    itemList.insertAdjacentHTML(
+      "beforeend",
+      `<div class="cart-item">
+  
+      <div class="item-left">
+        <div>x${cart[item].qty}</div>
+       <h4>${cart[item].title}</h4>
+      </div>
+  
+      <div class="item-right">
+        <div>$${cart[item].price}</div>
+        <p class="remove-btn">Remove<p>
+      </div>
+    </div>`
+    );
   }
 }
-
-function addItemToCart(cartItem) {
-  itemList.insertAdjacentHTML(
-    "beforeend",
-    `<div class="cart-item">
-
-    <div class="item-left">
-      <div>x${cartItem.qty}</div>
-     <h4>${cartItem.title}</h4>
-    </div>
-
-    <div class="item-right">
-      <div>$${cartItem.price}</div>
-      <p class="remove-btn">Remove<p>
-    </div>
-  </div>`
-  );
-}
-
 updateCart();
 
 // -----------------------------------------
@@ -150,7 +148,21 @@ updateCart();
 const removeBtn = document.querySelectorAll(".remove-btn");
 
 removeBtn.forEach((btn) =>
-  btn.addEventListener("click", () => {
-    console.log("clicked");
+  btn.addEventListener("click", (e) => {
+    let itemName =
+      e.target.parentElement.previousElementSibling.lastElementChild.innerHTML;
+    deleteItem(itemName);
   })
 );
+
+function deleteItem(itemName) {
+  const cart = getCart();
+
+  for (let item in cart) {
+    if (cart[item].title == itemName) {
+      delete cart[item];
+    }
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+}
