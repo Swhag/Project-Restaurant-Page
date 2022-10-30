@@ -47,7 +47,6 @@ const swiper = new Swiper(".swiper", {
 })();
 
 // Menu data -------------------------------
-
 let menuArray = [
   menu.teaArray,
   menu.appetizerArray,
@@ -55,9 +54,8 @@ let menuArray = [
   menu.noodleArray,
 ];
 
-const cardSection = document.querySelectorAll(".card-container");
-
 document.addEventListener("DOMContentLoaded", () => {
+  const cardSection = document.querySelectorAll(".card-container");
   for (let k = 0; k < menuArray.length; k++) {
     for (let i = 0; i < menuArray[k].length; i++) {
       if (menuArray[k][i].description == undefined) {
@@ -70,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div>${menuArray[k][i].description}</div>
         <div>$${menuArray[k][i].price}</div>
         <div class="btn-container">
-        <button data-price=${menuArray[k][i].price} data-title=${menuArray[k][i].title} class="btn add-btn">Add to Order</button>
+        <button data-price="${menuArray[k][i].price}" data-title="${menuArray[k][i].title}" class="btn add-btn">Add to Order</button>
         </div>
       </div>`
       );
@@ -80,59 +78,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // -----------------------------------------
 
-const addToCartBtn = document.querySelectorAll(".card-container");
-
-addToCartBtn.forEach((addButton) =>
-  addButton.addEventListener("click", (e) => {
-    const cart = getCart();
-
-    if (e.target.classList.contains("add-btn")) {
-      let price = parseInt(e.target.dataset.price);
-      let title = e.target.dataset.title;
-
-      if (title in cart) {
-        cart[title].qty++;
-      } else {
-        let cartItem = {
-          title: title,
-          price: price,
-          qty: 1,
-        };
-        cart[title] = cartItem;
-      }
-
-      localStorage.setItem("cart", JSON.stringify(cart));
-      updateCart();
-    }
-  })
-);
-
-// -----------------------------------------
-
 function getCart() {
-  let cart = {};
+  let cart = [];
   if (localStorage.getItem("cart")) {
     cart = JSON.parse(localStorage.getItem("cart"));
   }
   return cart;
 }
 
-const itemList = document.querySelector(".cart-items");
-
 function updateCart() {
   const cart = getCart();
+  const itemList = document.querySelector(".cart-items");
   itemList.innerHTML = "";
 
   for (let item in cart) {
     itemList.insertAdjacentHTML(
       "beforeend",
       `<div class="cart-item">
-  
+
       <div class="item-left">
         <div>x${cart[item].qty}</div>
        <h4>${cart[item].title}</h4>
       </div>
-  
+
       <div class="item-right">
         <div>$${cart[item].price}</div>
         <button class="remove-btn">Remove</button>
@@ -140,31 +108,63 @@ function updateCart() {
     </div>`
     );
   }
+
+  let total = 0;
+  for (let i = 0; i < cart.length; i++) {
+    total += cart[i].price * cart[i].qty;
+  }
+
+  const checkoutBtn = document.querySelector(".checkout-btn");
+  checkoutBtn.innerHTML = `<i class="fa fa-utensils"></i>
+   Checkout • $${parseFloat(total).toFixed(2)}`;
 }
 
 updateCart();
 
 // -----------------------------------------
 
-const removeBtn = document.querySelectorAll(".remove-btn");
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-btn")) {
+    addToCart(e);
+  }
 
-removeBtn.forEach((btn) =>
-  btn.addEventListener("click", (e) => {
+  if (e.target.classList.contains("remove-btn")) {
     let itemName =
       e.target.parentElement.previousElementSibling.lastElementChild.innerHTML;
-
     deleteItem(itemName);
-  })
-);
+  }
+});
+
+function addToCart(e) {
+  const cart = getCart();
+
+  let price = parseFloat(e.target.dataset.price).toFixed(2);
+  let title = e.target.dataset.title;
+  let item = cart.find((item) => item.title === title);
+
+  console.log(price);
+  if (item) {
+    item.qty++;
+  } else {
+    cart.push({
+      title: title,
+      price: price,
+      qty: 1,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+}
 
 function deleteItem(itemName) {
   const cart = getCart();
 
-  for (let item in cart) {
-    if (cart[item].title == itemName) {
-      delete cart[item];
+  cart.forEach((item, index) => {
+    if (item.title === itemName) {
+      cart.splice(index, 1);
     }
-  }
+  });
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCart();
 }

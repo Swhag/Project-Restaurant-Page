@@ -381,11 +381,10 @@ ul.list::after {
 .cart-item {
   border-bottom: 1px solid #c2c2c2;
   height: 100px;
-  padding: 30px;
+  padding: 20px;
 
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
 }
 
 .item-left {
@@ -410,6 +409,14 @@ ul.list::after {
 .item-right button:hover {
   color: #8e0000;
   cursor: pointer;
+}
+
+.checkout-btn {
+  font-size: 18px;
+}
+
+.checkout-btn .fa-utensils {
+  margin-right: 10px;
 }
 
 /* ramen menu */

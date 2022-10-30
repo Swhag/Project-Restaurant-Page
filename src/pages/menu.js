@@ -10,46 +10,46 @@ class Item {
 
 let ramen1 = new Item(
   "14.00",
-  "R1.Tonkotsu",
+  "R1. Tonkotsu",
   "Classic pork broth, topped w. egg, chashu pork, bamboo shoots, red ginger, scallion."
 );
 
 let ramen2 = new Item(
   "14.00",
-  "R2.Shoyu",
+  "R2. Shoyu",
   "Soy sauce pork broth, topped w. kikurage, egg, chashu pork, bamboo shoots, scallion."
 );
 
 let ramen3 = new Item(
   "14.00",
-  "R3.Miso",
+  "R3. Miso",
   "Pork broth w. miso, topped w. corn, egg, chashu pork, bamboo shoots, scallion."
 );
 
 let ramen4 = new Item(
   "17.00",
-  "R4.Spicy Miso",
+  "R4. Spicy Miso",
   "Soy sauce pork broth, topped w. kikurage, egg, chashu pork, bamboo shoots, scallion."
 );
 let ramen5 = new Item(
   "14.00",
-  "R5.Negi",
+  "R5. Negi",
   "Soy sauce pork broth, topped w. kikurage, egg, chashu pork, bamboo shoots, scallion."
 );
 let ramen6 = new Item(
   "20.00",
-  "R6.Gomoku",
+  "R6. Gomoku",
   "Chef picked seafood, vegetable, egg in pork broth."
 );
 let ramen7 = new Item(
   "16.00",
-  "R7.Touchucha",
+  "R7. Touchucha",
   "Tochucha tea broth, w. tochucha noodles, topped w. egg, pork chashu, bamboo shoots."
 );
 
 let ramen8 = new Item(
   "16.00",
-  "R9.Cold Tochucha",
+  "R8. Cold Tochucha",
   "Cold tochucha ramen topped w. kaiware, nori egg, wild mushrooms, in tochucha dressing."
 );
 
@@ -81,43 +81,43 @@ let teaArray = [tea1, tea2, tea3, tea4, tea5, tea6, tea7, tea8];
 
 let appetizer1 = new Item(
   "8.00",
-  "A1.Edamame",
+  "A1. Edamame",
   "Steamed soybeans w. matcha salt."
 );
 let appetizer2 = new Item(
   "9.00",
-  "A2.Gyoza",
+  "A2. Gyoza",
   "Japanese Pan fried pork dumplings."
 );
 
 let appetizer3 = new Item(
   "9.00",
-  "A3.Takoyaki",
+  "A3. Takoyaki",
   "Octopus balls w. bonito flakes."
 );
 let appetizer4 = new Item(
   "10.00",
-  "A4.Pork Bun",
+  "A4. Pork Bun",
   "Chashu pork in buns w. lettuce & cucumber."
 );
 let appetizer5 = new Item(
   "10.00",
-  "A5.Shishito pepper",
+  "A5. Shishito pepper",
   "Sautéed shishito pepper w. matcha salt."
 );
 let appetizer6 = new Item(
   "10.00",
-  "A6.Agedashi Tofu",
+  "A6. Agedashi Tofu",
   "Deep fried tofu with tensuyu sauce."
 );
 let appetizer7 = new Item(
   "14.00",
-  "A7.Geso Fry",
+  "A7. Geso Fry",
   "Japanese style fried calamari."
 );
 let appetizer8 = new Item(
   "11.00",
-  "A8.Yuzu Tebasaki",
+  "A8. Yuzu Tebasaki",
   "Japanese fried chicken wings w. yuzu & lemon sauce."
 );
 
