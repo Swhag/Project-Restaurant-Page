@@ -385,7 +385,7 @@ ul.list::after {
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .item-left {
@@ -394,17 +394,20 @@ ul.list::after {
 }
 
 .item-right {
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.item-right p {
+.item-right button {
+  margin-top: 10px;
+  border-style: none;
+  background: none;
   color: #c62828;
+  font-size: 16px;
 }
 
-.item-right p:hover {
+.item-right button:hover {
   color: #8e0000;
   cursor: pointer;
 }

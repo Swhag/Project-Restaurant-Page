@@ -135,12 +135,13 @@ function updateCart() {
   
       <div class="item-right">
         <div>$${cart[item].price}</div>
-        <p class="remove-btn">Remove<p>
+        <button class="remove-btn">Remove</button>
       </div>
     </div>`
     );
   }
 }
+
 updateCart();
 
 // -----------------------------------------
@@ -151,6 +152,7 @@ removeBtn.forEach((btn) =>
   btn.addEventListener("click", (e) => {
     let itemName =
       e.target.parentElement.previousElementSibling.lastElementChild.innerHTML;
+
     deleteItem(itemName);
   })
 );
