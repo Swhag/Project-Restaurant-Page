@@ -55,30 +55,32 @@ let menuArray = [
   menu.noodleArray,
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const cardSection = document.querySelectorAll(".card-container");
-  for (let k = 0; k < menuArray.length; k++) {
-    for (let i = 0; i < menuArray[k].length; i++) {
-      if (menuArray[k][i].description == undefined) {
-        menuArray[k][i].description = "";
+(function render() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const cardSection = document.querySelectorAll(".card-container");
+    for (let k = 0; k < menuArray.length; k++) {
+      for (let i = 0; i < menuArray[k].length; i++) {
+        if (menuArray[k][i].description == undefined) {
+          menuArray[k][i].description = "";
+        }
+        cardSection[k].insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+          <h3>${menuArray[k][i].title}</h3>
+          <div>${menuArray[k][i].description}</div>
+          <div>$${menuArray[k][i].price}</div>
+          <div class="btn-container">
+          <button data-price="${menuArray[k][i].price}" data-title="${menuArray[k][i].title}" class="btn add-btn">Add to Order</button>
+          </div>
+        </div>`
+        );
       }
-      cardSection[k].insertAdjacentHTML(
-        "beforeend",
-        `<div class="card">
-        <h3>${menuArray[k][i].title}</h3>
-        <div>${menuArray[k][i].description}</div>
-        <div>$${menuArray[k][i].price}</div>
-        <div class="btn-container">
-        <button data-price="${menuArray[k][i].price}" data-title="${menuArray[k][i].title}" class="btn add-btn">Add to Order</button>
-        </div>
-      </div>`
-      );
     }
-  }
-  activateTabs();
-  updateCart();
-  updateCheckout();
-});
+    activateTabs();
+    updateCart();
+    updateCheckout();
+  });
+})();
 
 // -----------------------------------------
 
