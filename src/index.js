@@ -38,7 +38,7 @@ function activateTabs() {
     for (let i = 0; i < tabs.length; i++) {
       tabs[i].classList.remove('orange');
       tabsContent[i].classList.remove('show');
-      if (tabs[i] == a) {
+      if (tabs[i] === a) {
         tabs[i].classList.add('orange');
         tabsContent[i].classList.add('show');
       }
