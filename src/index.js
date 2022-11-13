@@ -1,46 +1,46 @@
-import "./styles/style.css";
-import "./styles/utilities.css";
-import "./pages/images";
-import * as menu from "./pages/menu";
-import * as home from "./pages/home";
+import './styles/style.css';
+import './styles/utilities.css';
+import './pages/images';
+import * as menu from './pages/menu';
+import * as home from './pages/home';
 
 // image slides -------------------------------
 
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper('.swiper', {
   // Optional parameters
 
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
     clickable: true,
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });
 
 // Menu tabs -------------------------------
 
 function activateTabs() {
-  const tabs = document.querySelectorAll(".tab-button");
-  const tabsContent = document.querySelectorAll(".tab-content");
+  const tabs = document.querySelectorAll('.tab-button');
+  const tabsContent = document.querySelectorAll('.tab-content');
 
   tabs.forEach((a) =>
-    a.addEventListener("mousedown", () => displayTabContent(a))
+    a.addEventListener('mousedown', () => displayTabContent(a))
   );
 
   function displayTabContent(a) {
     for (let i = 0; i < tabs.length; i++) {
-      tabs[i].classList.remove("orange");
-      tabsContent[i].classList.remove("show");
+      tabs[i].classList.remove('orange');
+      tabsContent[i].classList.remove('show');
       if (tabs[i] == a) {
-        tabs[i].classList.add("orange");
-        tabsContent[i].classList.add("show");
+        tabs[i].classList.add('orange');
+        tabsContent[i].classList.add('show');
       }
     }
   }
@@ -56,15 +56,15 @@ let menuArray = [
 ];
 
 (function render() {
-  document.addEventListener("DOMContentLoaded", () => {
-    const cardSection = document.querySelectorAll(".card-container");
+  document.addEventListener('DOMContentLoaded', () => {
+    const cardSection = document.querySelectorAll('.card-container');
     for (let k = 0; k < menuArray.length; k++) {
       for (let i = 0; i < menuArray[k].length; i++) {
         if (menuArray[k][i].description == undefined) {
-          menuArray[k][i].description = "";
+          menuArray[k][i].description = '';
         }
         cardSection[k].insertAdjacentHTML(
-          "beforeend",
+          'beforeend',
           `<div class="card">
           <h3>${menuArray[k][i].title}</h3>
           <div>${menuArray[k][i].description}</div>
@@ -86,8 +86,8 @@ let menuArray = [
 
 function getCart() {
   let cart = [];
-  if (localStorage.getItem("cart")) {
-    cart = JSON.parse(localStorage.getItem("cart"));
+  if (localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'));
   }
   return cart;
 }
@@ -112,7 +112,7 @@ function addToCart(e) {
     });
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // -----------------------------------------
@@ -125,19 +125,19 @@ function deleteItem(itemName) {
       cart.splice(index, 1);
     }
   });
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // -----------------------------------------
 
 function updateCart() {
   const cart = getCart();
-  const itemList = document.querySelector(".cart-items");
-  itemList.innerHTML = "";
+  const itemList = document.querySelector('.cart-items');
+  itemList.innerHTML = '';
 
   for (let item in cart) {
     itemList.insertAdjacentHTML(
-      "beforeend",
+      'beforeend',
       `<div class="cart-item">
 
       <div class="item-left">
@@ -164,19 +164,19 @@ function updateCheckout() {
     total += cart[i].price * cart[i].qty;
   }
 
-  const checkoutBtn = document.querySelector(".checkout-btn");
+  const checkoutBtn = document.querySelector('.checkout-btn');
   checkoutBtn.innerHTML = `<i class="fa fa-utensils"></i>
    Checkout • $${parseFloat(total).toFixed(2)}`;
 }
 
 // -----------------------------------------
 
-window.addEventListener("click", (e) => {
-  if (e.target.classList.contains("add-btn")) {
+window.addEventListener('click', (e) => {
+  if (e.target.classList.contains('add-btn')) {
     addToCart(e);
   }
 
-  if (e.target.classList.contains("remove-btn")) {
+  if (e.target.classList.contains('remove-btn')) {
     let itemName =
       e.target.parentElement.previousElementSibling.lastElementChild.innerHTML;
     deleteItem(itemName);
