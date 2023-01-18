@@ -18,6 +18,6 @@ A simple Restaurant Page built with:
 
 Click Here: [Live Demo](https://swhag.github.io/Project-Restaurant-Page/) :point_left:
 
-![Capture1](https://user-images.githubusercontent.com/109196962/213096756-8d914a0c-5a63-4e8c-b6fd-83a56125f4fe.PNG)
-![Capture2](https://user-images.githubusercontent.com/109196962/213096758-16badb7d-f408-4e1b-86f0-679f51be18ba.PNG)
-![Capture3](https://user-images.githubusercontent.com/109196962/213096764-c1245bca-09be-408d-b107-b53dce58e12d.PNG)
+![Capture1](https://user-images.githubusercontent.com/109196962/213096849-15db9839-6b9a-462d-b979-5d0744dda8e8.PNG)
+![Capture2](https://user-images.githubusercontent.com/109196962/213096850-1b23f13c-7add-4f52-9e11-46c5722d3ba1.PNG)
+![Capture3](https://user-images.githubusercontent.com/109196962/213096852-3329ec0f-5a54-4a09-8603-858191c286f5.PNG)
