@@ -1,4 +1,4 @@
-# Project-Restaurant-Page
+# Project-Restaurant-Page (Small Project)
 
 ### Description
 
