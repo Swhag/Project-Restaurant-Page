@@ -86,8 +86,8 @@ let menuArray = [
 
 function getCart() {
   let cart = [];
-  if (localStorage.getItem('cart')) {
-    cart = JSON.parse(localStorage.getItem('cart'));
+  if (localStorage.getItem('Ramen-cart')) {
+    cart = JSON.parse(localStorage.getItem('Ramen-cart'));
   }
   return cart;
 }
@@ -112,7 +112,7 @@ function addToCart(e) {
     });
   }
 
-  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem('Ramen-cart', JSON.stringify(cart));
 }
 
 // -----------------------------------------
@@ -125,7 +125,7 @@ function deleteItem(itemName) {
       cart.splice(index, 1);
     }
   });
-  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem('Ramen-cart', JSON.stringify(cart));
 }
 
 // -----------------------------------------
