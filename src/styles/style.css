@@ -369,35 +369,48 @@ img {
   z-index: 20;
 }
 
-ul.list {
-  list-style-type: none;
+.menu-tabs {
   margin: 0;
   padding: 0;
   border-bottom: 1px solid #ccc;
+  display: flex;
 }
-ul.list::after {
-  content: '';
-  display: block;
-  clear: both;
+
+@media (max-width: 768px) {
+  .menu-tabs {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
 }
-.tab-button {
-  display: block;
+
+.tab-buttons {
   padding: 10px 20px 10px 20px;
-  float: left;
   margin-right: -1px;
   margin-bottom: -1px;
   color: grey;
-  text-decoration: none;
   cursor: pointer;
+  display: block;
 }
 
 .orange {
-  border-top: 2px solid orange;
+  border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  border-bottom: 1px solid white;
+  border-bottom: 3px solid orange;
   border-left: 1px solid #ccc;
-  color: black;
+
   margin-top: -2px;
+}
+
+@media (max-width: 768px) {
+  .orange {
+    color: white;
+    background-color: #ff8a65;
+  }
+
+  .tab-buttons {
+    border-bottom: 1px solid #ff8a65;
+  }
 }
 
 .tab-content {
@@ -409,48 +422,55 @@ ul.list::after {
   display: block;
 }
 
-.outer-container {
+.menu-container {
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
+  padding-top: 90px;
 }
 
-.inner-container {
-  display: flex;
-  justify-content: center;
-  width: 75vw;
-  /* padding-top: 120px; */
+@media (max-width: 768px) {
+  .menu-container {
+    padding-bottom: 170px;
+  }
 }
 
-/* cart / order summary */
-.cart-display {
+/* order display / order summary */
+.order-display {
   display: flex;
   flex-direction: column;
 
-  width: 30vw;
-  height: 480px;
+  max-width: 500px;
+  max-height: 480px;
   margin: 70px 15px 0px 0px;
-  padding: 5px;
 }
 
-.cart-notice {
+@media (max-width: 768px) {
+  .menu-container {
+    padding-bottom: 170px;
+    margin: 0px;
+  }
+}
+
+.order-notice {
   border: 1px solid #c2c2c2;
   border-radius: 10px;
   padding: 20px;
+  text-align: center;
 }
 
-.cart-summary {
+.order-summary {
   margin: 30px auto 30px auto;
 }
 
-.cart-display .checkout-btn {
+.order-display .checkout-btn {
   padding: 15px;
   margin: 30px auto 0 auto;
   border-radius: 10px;
   width: 90%;
 }
 
-.cart-item {
+.order-summary {
   border-bottom: 1px solid #c2c2c2;
   height: 100px;
   padding: 20px;
@@ -459,18 +479,7 @@ ul.list::after {
   justify-content: space-between;
 }
 
-.item-left {
-  display: flex;
-  gap: 20px;
-}
-
-.item-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.item-right button {
+.summary-right button {
   margin-top: 10px;
   border-style: none;
   background: none;
@@ -478,7 +487,7 @@ ul.list::after {
   font-size: 16px;
 }
 
-.item-right button:hover {
+.summary-right button:hover {
   color: #8e0000;
   cursor: pointer;
 }
@@ -492,14 +501,15 @@ ul.list::after {
 }
 
 /* ramen menu */
-.tab-content .card-container {
+
+.tab-content .product-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin: 15px 0px 30px 0px;
 }
 
-.tab-content .card {
+.tab-content .product-card {
   border: 1px solid #c2c2c2;
   border-left: 5px solid #ff9800;
   box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 10%);
@@ -511,6 +521,16 @@ ul.list::after {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .tab-content .product-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .tab-content .product-card {
+    width: 100%;
+  }
 }
 
 .tab-content .card:hover {
@@ -527,23 +547,37 @@ ul.list::after {
   align-items: flex-end;
 }
 
-.tab-content .card .add-btn {
+.tab-content .product-card .add-btn {
   background-color: #c2185b;
   width: 150px;
   border-radius: 7px;
 }
 
-.tab-content .card .btn:hover {
+.tab-content .product-card .btn:hover {
   background-color: #8c0032;
 }
 
-.tab-content .card div:nth-child(2) {
+.tab-content .product-card div:nth-child(2) {
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  /* Need to adjust padding-top for the floating top navbar */
+  .menu-container {
+    padding-top: 140px;
+    flex-direction: column;
+  }
+
+  .order-display {
+    width: 100%;
+    height: 480px;
+  }
+}
+
+/* ------------------------------------------------ */
+/* Footer Styling */
 /* ------------------------------------------------ */
 
-/* Footer */
 .footer {
   display: flex;
   align-items: center;

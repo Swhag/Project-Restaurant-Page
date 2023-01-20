@@ -27,7 +27,7 @@ const swiper = new Swiper('.swiper', {
 // Menu tabs -------------------------------
 
 function activateTabs() {
-  const tabs = document.querySelectorAll('.tab-button');
+  const tabs = document.querySelectorAll('.tab-buttons');
   const tabsContent = document.querySelectorAll('.tab-content');
 
   tabs.forEach((a) =>
@@ -57,7 +57,7 @@ let menuArray = [
 
 (function render() {
   document.addEventListener('DOMContentLoaded', () => {
-    const cardSection = document.querySelectorAll('.card-container');
+    const cardSection = document.querySelectorAll('.product-list');
     for (let k = 0; k < menuArray.length; k++) {
       for (let i = 0; i < menuArray[k].length; i++) {
         if (menuArray[k][i].description == undefined) {
@@ -65,7 +65,7 @@ let menuArray = [
         }
         cardSection[k].insertAdjacentHTML(
           'beforeend',
-          `<div class="card">
+          `<div class="product-card">
           <h3>${menuArray[k][i].title}</h3>
           <div>${menuArray[k][i].description}</div>
           <div>$${menuArray[k][i].price}</div>
@@ -139,14 +139,14 @@ function updateCart() {
   for (let item in cart) {
     itemList.insertAdjacentHTML(
       'beforeend',
-      `<div class="cart-item">
+      `<div class="order-summary">
 
-      <div class="item-left">
+      <div class="summary-left">
         <div>x${cart[item].qty}</div>
        <h4>${cart[item].title}</h4>
       </div>
 
-      <div class="item-right">
+      <div class="summary-right">
         <div>$${cart[item].price}</div>
         <button class="remove-btn">Remove</button>
       </div>

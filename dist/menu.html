@@ -5,76 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-  />
-  <script
-  src="https://kit.fontawesome.com/66b42f50eb.js"
-  crossorigin="anonymous"
-></script>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/66b42f50eb.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>Menu</title>
-
   <script defer src="bundle.js"></script></head>
+
   <body id="home">
-      <div id="navbar" class="menu navbar">
-        <h1 class="logo"><span class="text-primary"> Simple</span> Ramen</h1>
-        <nav>
-          <ul>
-            <li><a class='nav-link' href="./index.html">Home</a></li>
-            <li><a class='nav-link' href="./index.html#gallery">Gallery</a></li>
-            <li><a class='nav-link' href="#contact">Contact</a></li>
-            <li><a class='nav-link' href="./menu.html">Menu</a></li>
-          </ul>
-        </nav>
-      </div>
+    <div id="navbar" class="menu navbar">
+      <h1 class="logo"><span class="text-primary"> Simple</span> Ramen</h1>
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="./index.html">Home</a></li>
+          <li><a class="nav-link" href="./index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="nav-link" href="./menu.html">Menu</a></li>
+        </ul>
+      </nav>
+    </div>
 
-    <section class="outer-container">
-    <div class="inner-container">
+    <div class="menu-container">
       <div class="container mt-5">
-      <ul class="list">
-        <li class="tab-button">Tea & Dessert</li>
-        <li class="tab-button">Appetizer</li>
-        <li class="tab-button orange">Ramen</li>
-        <li class="tab-button">Soba & Udon</li>
-      </ul>
-      <div class="tab-content">
-          <div class="card-container">
+        <div class="menu-tabs">
+          <div class="tab-buttons">Tea & Dessert</div>
+          <div class="tab-buttons">Appetizer</div>
+          <div class="tab-buttons orange">Ramen</div>
+          <div class="tab-buttons">Soba & Udon</div>
+        </div>
+
+        <div class="tab-content">
+          <div class="product-list"></div>
+        </div>
+
+        <div class="tab-content">
+          <div class="product-list"></div>
+        </div>
+
+        <div class="tab-content show">
+          <div class="product-list"></div>
+        </div>
+
+        <div class="tab-content">
+          <div class="product-list"></div>
         </div>
       </div>
 
-      <div class="tab-content">
-        <div class="card-container">
-        </div>
-      </div>
-      
-      <div class="tab-content show">
-        <div class="card-container">
-        </div>
-      </div>
-
-      <div class="tab-content">
-        <div class="card-container">
-        </div>
-      </div>
-
-      </div>
-      <div class="cart-display">
-        <h4 class="cart-notice">
-          We offer contactless service. Please follow the contactless signs in the restaurant to pickup.
+      <div class="order-display">
+        <h4 class="order-notice">
+          We offer contactless service. Please follow the contactless signs in
+          the restaurant to pickup.
         </h4>
-        <h3 class="cart-summary">Order Summary</h3>
+        <h3 class="order-summary">Order Summary</h3>
         <div class="cart-items"></div>
-        
+
         <button class="btn checkout-btn"></button>
       </div>
-
-      <div></div>
     </div>
-  </section>
-
-
-
 
     <!-- Contact -->
     <section id="contact" class="contact">
@@ -83,52 +74,91 @@
       </header>
       <div class="contact_container">
         <div class="slide_container">
-            <div class="swiper">
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide"><img src="./assets/img/slide1.jpg" alt="" /></div>
-                <div class="swiper-slide"><img src="./assets/img/slide2.jpg" alt="" /></div>
-                <div class="swiper-slide"><img src="./assets/img/slide3.jpg" alt="" /></div>
-                <div class="swiper-slide"><img src="./assets/img/slide4.jpg" alt="" /></div>
-                <div class="swiper-slide"><img src="./assets/img/slide5.jpg" alt="" /></div>
-                ...
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img src="./assets/img/slide1.jpg" alt="" />
               </div>
-              <!-- If we need pagination -->
-              <div class="swiper-pagination"></div>
-      
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slide2.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slide3.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slide4.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slide5.jpg" alt="" />
+              </div>
+              ...
             </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
 
-          <div class="contact-info">
-            <h2><i class="fa-solid fa-phone"></i> Contact Info</h2>
-            <div class="phone-number">718-279-2470</div>
-            <div class="address">30 Alfred Drive, Bayside, NY 11361</div>
-            
-            <h2 class="hours"><i class="fa-solid fa-clock"></i> Business Hours</h2>
-            <div class="days-hours">
+        <div class="contact-info">
+          <h2><i class="fa-solid fa-phone"></i> Contact Info</h2>
+          <div class="phone-number">718-279-2470</div>
+          <div class="address">30 Alfred Drive, Bayside, NY 11361</div>
+
+          <h2 class="hours">
+            <i class="fa-solid fa-clock"></i> Business Hours
+          </h2>
+          <div class="days-hours">
             <ul class="days">
-              <ul>Sunday</ul>
-              <ul>Monday</ul>
-              <ul>Tuesday</ul>
-              <ul>Wednesday</ul>
-              <ul>Thursday</ul>
-              <ul>Friday</ul>
-              <ul>Saturday</ul>
+              <ul>
+                Sunday
+              </ul>
+              <ul>
+                Monday
+              </ul>
+              <ul>
+                Tuesday
+              </ul>
+              <ul>
+                Wednesday
+              </ul>
+              <ul>
+                Thursday
+              </ul>
+              <ul>
+                Friday
+              </ul>
+              <ul>
+                Saturday
+              </ul>
             </ul>
             <ul class="hours">
-              <ul>11:00 AM - 10:30 PM</ul>
-              <ul>11:00 AM - 10:30 PM</ul>
-              <ul>11:00 AM - 10:30 PM</ul>
-              <ul>11:00 AM - 10:30 PM</ul>
-              <ul>11:00 AM - 10:30 PM</ul>
-              <ul>11:00 AM - 10:30 PM</ul>
-              <ul>11:00 AM - 11:30 PM</ul>
+              <ul>
+                11:00 AM - 10:30 PM
+              </ul>
+              <ul>
+                11:00 AM - 10:30 PM
+              </ul>
+              <ul>
+                11:00 AM - 10:30 PM
+              </ul>
+              <ul>
+                11:00 AM - 10:30 PM
+              </ul>
+              <ul>
+                11:00 AM - 10:30 PM
+              </ul>
+              <ul>
+                11:00 AM - 10:30 PM
+              </ul>
+              <ul>
+                11:00 AM - 11:30 PM
+              </ul>
             </ul>
-          </div>
           </div>
         </div>
       </div>
