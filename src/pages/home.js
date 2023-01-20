@@ -54,7 +54,7 @@ window.onscroll = function () {
 // Smooth Scrolling
 $('#navbar a, .btn').on('click', function (e) {
   if (this.hash !== '') {
-    e.preventDefault();
+    // e.preventDefault();
 
     const hash = this.hash;
 
