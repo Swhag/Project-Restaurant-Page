@@ -76,6 +76,7 @@ let menuArray = [
         );
       }
     }
+
     activateTabs();
     updateCart();
     updateCheckout();
@@ -181,6 +182,7 @@ window.addEventListener('click', (e) => {
       e.target.parentElement.previousElementSibling.lastElementChild.innerHTML;
     deleteItem(itemName);
   }
+
   updateCart();
   updateCheckout();
 });

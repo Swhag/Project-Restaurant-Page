@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background: #fff;
   color: #333;
   line-height: 1.6;
@@ -89,15 +89,15 @@ img {
 }
 
 .img {
-  background: url("../assets/img//main/main.jpg") no-repeat center center/cover;
+  background: url('../assets/img//main/main.jpg') no-repeat center center/cover;
 }
 
 .img1 {
-  background: url("../assets/img/main/main1.jpg") no-repeat center center/cover;
+  background: url('../assets/img/main/main1.jpg') no-repeat center center/cover;
 }
 
 .img2 {
-  background: url("../assets/img/main/main2.jpg") no-repeat center center/cover;
+  background: url('../assets/img/main/main2.jpg') no-repeat center center/cover;
 }
 
 .hero .content {
@@ -121,7 +121,7 @@ img {
 }
 
 .hero::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -153,25 +153,30 @@ img {
 #gallery {
   display: flex;
   flex-direction: column;
-  height: 85vh;
+  max-height: 85vh;
+  padding-bottom: 50px;
 }
 
-#gallery .card_container {
+#gallery .image-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-#gallery .card {
-  width: 20vw;
-}
-
-.gallery img {
+#gallery img {
+  max-width: 400px;
   transition: all 0.1s ease-in-out;
 }
 
-.gallery img:hover {
+@media (max-width: 768px) {
+  #gallery img {
+    max-width: 200px;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+#gallery img:hover {
   transform: scale(1.05);
   opacity: 0.9;
 }
@@ -203,7 +208,7 @@ img {
 }
 
 .whitebox:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .whitebox_text {
@@ -242,7 +247,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .contact_container {
@@ -284,6 +289,7 @@ img {
 
 .swiper-slide img {
   width: 100%;
+  height: 400px;
 }
 
 .swiper .swiper-button-prev,
@@ -305,7 +311,7 @@ ul.list {
   border-bottom: 1px solid #ccc;
 }
 ul.list::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
