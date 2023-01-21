@@ -33,9 +33,6 @@ const navbar = document.querySelector('.navbar');
 let scrolled = false;
 
 window.onscroll = function () {
-  if (navbar.classList.contains('menu')) {
-    return;
-  }
   if (window.pageYOffset > 100) {
     navbar.classList.remove('top');
     if (!scrolled) {

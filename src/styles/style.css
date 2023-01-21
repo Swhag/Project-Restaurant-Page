@@ -58,6 +58,11 @@ img {
 
 .navbar.top {
   background: transparent;
+  background-color: #333;
+}
+
+.menu-navbar {
+  position: static;
 }
 
 .navbar a {
@@ -426,7 +431,8 @@ img {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 90px;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 /* ramen menu */
@@ -443,6 +449,8 @@ img {
   border-left: 5px solid #ff9800;
   box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 10%);
   background-color: #fff;
+
+  width: 500px;
   padding: 20px;
   border-radius: 4px;
 
@@ -485,7 +493,6 @@ img {
   flex-direction: column;
 
   max-width: 500px;
-  max-height: 480px;
   margin: 70px 15px 0px 0px;
 }
 
@@ -496,10 +503,6 @@ img {
   text-align: center;
 }
 
-.order-summary {
-  margin: 30px auto 30px auto;
-}
-
 .order-display .checkout-btn {
   padding: 15px;
   margin: 30px auto 0 auto;
@@ -508,12 +511,21 @@ img {
 }
 
 .order-summary {
-  border-bottom: 1px solid #c2c2c2;
-  height: 100px;
-  padding: 20px;
+  padding: 30px;
+  border-bottom: 1px solid #ccc;
 
   display: flex;
   justify-content: space-between;
+}
+
+.order-summary h3 {
+  margin: auto;
+}
+
+.cart-items {
+  max-height: 570px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .summary-right button {
@@ -540,7 +552,6 @@ img {
 @media (max-width: 1600px) {
   /* Need to adjust margin-top for the floating top navbar */
   .menu-container {
-    margin-top: 140px;
     width: 100%;
   }
 
@@ -551,17 +562,18 @@ img {
   .order-display {
     max-width: 100%;
     height: 480px;
+    margin: 0px;
+  }
+
+  .tab-content .product-card {
+    width: none;
   }
 }
 
 @media (max-width: 1400px) {
-  body {
-    font-size: 0.8rem;
-  }
   /* Need to adjust margin-top for the floating top navbar */
   .menu-container {
     flex-direction: column;
-    margin-bottom: 140px;
   }
 
   .tab-content .product-list {
@@ -580,10 +592,12 @@ img {
 }
 
 @media (max-width: 960px) {
+  body {
+    font-size: 0.8rem;
+  }
   .menu-container {
     flex-direction: column;
-    margin-top: 140px;
-    margin-bottom: 140px;
+    margin-top: 0px;
   }
 
   .tab-content .product-list {
