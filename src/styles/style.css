@@ -429,12 +429,6 @@ img {
   padding-top: 90px;
 }
 
-@media (max-width: 768px) {
-  .menu-container {
-    padding-bottom: 170px;
-  }
-}
-
 /* order display / order summary */
 .order-display {
   display: flex;
@@ -443,13 +437,6 @@ img {
   max-width: 500px;
   max-height: 480px;
   margin: 70px 15px 0px 0px;
-}
-
-@media (max-width: 768px) {
-  .menu-container {
-    padding-bottom: 170px;
-    margin: 0px;
-  }
 }
 
 .order-notice {
@@ -523,16 +510,6 @@ img {
   justify-content: space-between;
 }
 
-@media (max-width: 768px) {
-  .tab-content .product-list {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .tab-content .product-card {
-    width: 100%;
-  }
-}
-
 .tab-content .card:hover {
   transform: scale(1.01);
 }
@@ -562,9 +539,18 @@ img {
 }
 
 @media (max-width: 768px) {
+  .tab-content .product-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .tab-content .product-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
   /* Need to adjust padding-top for the floating top navbar */
   .menu-container {
-    padding-top: 140px;
     flex-direction: column;
   }
 
