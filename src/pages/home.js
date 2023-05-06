@@ -25,7 +25,7 @@ function switchImage() {
 
 setInterval(() => {
   switchImage();
-}, 5000);
+}, 8000);
 
 // JQuery navbar & scrolling -------------------------
 
